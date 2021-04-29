@@ -14,20 +14,79 @@ export default {
   data () {
     return {
       payColData: {
+        // 柱形的颜色设置
+        color: '#2466EE',
         xAxis: {
           type: 'category',
-          data: ['支付宝', '支付宝', '支付宝', '支付宝', '支付宝', '支付宝', '支付宝', '支付宝', '支付宝']
+          data: [
+            '微信',
+            '支付宝',
+            '微信',
+            '银行卡',
+            '南瓜籽',
+            '支付宝',
+            '微信',
+            '支付宝',
+            '微信',
+            '支付宝',
+            '微信',
+            '支付宝'
+          ],
+          nameTextStyle: {
+            fontSize: 14
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#38D1F9',
+              opacity: 0
+            }
+          },
+          axisLabel: {
+            // 底部标签文字的角度
+            rotate: 50
+          },
+          max: function (value) {
+            return value.max
+          },
+          axisTick: {
+            // 去除x轴刻度线
+            show: false
+          }
         },
         yAxis: {
-          type: 'value'
+          type: 'value',
+          // 分割条数
+          splitNumber: 5,
+          // 分割间隔
+          interval: 250,
+          nameTextStyle: {
+            fontSize: 20
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#38D1F9'
+            }
+          },
+          splitLine: {
+            // y轴分割线的配置
+            show: true,
+            lineStyle: {
+              color: '#00AEFF',
+              opacity: 0.1
+            }
+          }
         },
         series: [
           {
             data: [181, 443, 659, 375, 940, 502, 18, 117, 866, 386, 846, 261],
             type: 'bar',
             label: {
-              rotate: 30
-            }
+              show: true,
+              position: 'top',
+              color: '#efefef',
+              fontSize: 24
+            },
+            barWidth: 20
           }
         ]
       }
@@ -47,23 +106,22 @@ export default {
   p {
     text-align: center;
     font-size: 20px;
-    font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
-    color: #3BD8FF;
+    color: #3bd8ff;
     position: relative;
-    top: 40px;
+    top: -16px;
     left: 355px;
     width: 220px;
     height: 40px;
     line-height: 40px;
-    background: url('../../assets/payimg/paypie.png') no-repeat;
+    background: url('../../assets/payimg/paycol.png') no-repeat;
     background-size: 100% 100%;
   }
-  .paycol{
+  .paycol {
     width: 929px;
     height: 467px;
-    background: url('../../assets/payimg/paypie.png') no-repeat;
-    background-size: 100% 100%;
+    position: relative;
+    bottom: 60px;
   }
 }
 </style>

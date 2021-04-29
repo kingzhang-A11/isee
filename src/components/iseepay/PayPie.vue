@@ -1,38 +1,33 @@
 <template>
   <div class='paybackground'>
-    <p>创建订单终端分布</p>
-    <div class="backgroundpay">
+    <p class='paybackgroundtitile'>创建订单终端分布</p>
+    <div class='backgroundpay'>
       <div
-      class='pie'
-      ref='pie'
-    ></div>
-    <div class="piedata">
-      <el-table
-        :data='tableData'
-        style='width: 400px'
-        height='350'
-      >
-        <el-table-column
-          type='index'
-          :index='indexMethod'
+        class='pie'
+        ref='pie'
+      ></div>
+      <div>
+        <div
+          class='piedata'
+          v-for='item in orderter'
+          :key='item.id'
         >
-        </el-table-column>
-        <el-table-column
-          prop='date'
-          width='100'
-        >
-        </el-table-column>
-        <el-table-column
-          prop='name'
-          width='100'
-        >
-        </el-table-column>
-        <el-table-column
-          prop='address'
-        >
-        </el-table-column>
-      </el-table>
-    </div>
+          <div class='equip'>
+            <div class='equipborder'>
+              <div
+                class='equipcircle'
+                :style='item.stylecolor'
+              ></div>
+            </div>
+            <div
+              class='equiptitle'
+              :style='item.stycolor'
+            >{{item.title}}</div>
+          </div>
+          <div class='equipnum'>{{item.num}}</div>
+          <div class='equipdata'>{{item.percent}}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -42,51 +37,78 @@ export default {
   name: 'PayPie',
   data () {
     return {
-      tableData: [
+      orderter: [
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '1',
+          stylecolor: { backgroundColor: '#00AEFF' },
+          stycolor: { color: '#00AEFF' },
+          title: 'IOS',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '2',
+          stylecolor: { backgroundColor: '#3825C8' },
+          stycolor: { color: '#3825C8' },
+          title: 'APH',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '3',
+          stylecolor: { backgroundColor: '#3DCFEE' },
+          stycolor: { color: '#3DCFEE' },
+          title: 'PAD',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '4',
+          stylecolor: { backgroundColor: '#C0528D' },
+          stycolor: { color: '#C0528D' },
+          title: 'ipad',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '5',
+          stylecolor: { backgroundColor: '#DAB93D' },
+          stycolor: { color: '#DAB93D' },
+          title: 'Win',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '6',
+          stylecolor: { backgroundColor: '#C65946' },
+          stycolor: { color: '#C65946' },
+          title: 'Mac',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '7',
+          stylecolor: { backgroundColor: '#136368' },
+          stycolor: { color: '#136368' },
+          title: 'iPad',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '8',
+          stylecolor: { backgroundColor: '#7D60B3' },
+          stycolor: { color: '#7D60B3' },
+          title: 'PC',
+          num: 858,
+          percent: '45%'
         },
         {
-          date: 'IOS',
-          name: '856',
-          address: '45%'
+          id: '9',
+          stylecolor: { backgroundColor: '#DA8648' },
+          stycolor: { color: '#DA8648' },
+          title: '小程序',
+          num: 858,
+          percent: '45%'
         }
       ],
       echartpie_option: {
@@ -95,16 +117,27 @@ export default {
         },
         series: [
           {
-            name: '访问来源',
+            name: '订单终端分布',
             type: 'pie',
             radius: '50%',
+            center: ['33%', '35%'],
+            label: {
+              show: true,
+              position: 'inside'
+            },
             data: [
-              { value: 1048, name: '搜索引擎' },
-              { value: 735, name: '直接访问' },
-              { value: 580, name: '邮件营销' },
-              { value: 484, name: '联盟广告' },
-              { value: 300, name: '视频广告' }
-            ],
+              { value: 1048, name: 'IOS' },
+              { value: 735, name: 'APH' },
+              { value: 580, name: 'PAD' },
+              { value: 484, name: 'ipad' },
+              { value: 300, name: 'Win' },
+              { value: 234, name: 'Mac' },
+              { value: 231, name: 'iPad' },
+              { value: 213, name: 'PC' },
+              { value: 534, name: '小程序' }
+            ].sort((a, b) => {
+              return a.value - b.value
+            }),
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
@@ -117,7 +150,7 @@ export default {
       }
     }
   },
-  mounted: function () {
+  mounted () {
     const myChart = this.$echarts.init(this.$refs.pie)
     myChart.setOption(this.echartpie_option)
   },
@@ -133,41 +166,72 @@ export default {
 <style scoped lang='scss'>
 .paybackground {
   position: relative;
-  margin-top:30px;
-  width:929px;
+  margin-top: 30px;
+  width: 929px;
   height: 432px;
   background: url('../../assets/payimg/paypie.png') no-repeat;
   background-size: 100% 100%;
-  p {
+  .paybackgroundtitile {
     position: absolute;
     left: 355px;
     top: -35px;
     text-align: center;
     font-size: 20px;
-    font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
-    color: #3BD8FF;
+    color: #3bd8ff;
     width: 220px;
     height: 40px;
     line-height: 40px;
-    background: url('../../assets/payimg/paypie.png') no-repeat;
+    background: url('../../assets/payimg/paycol.png') no-repeat;
     background-size: 100% 100%;
   }
-  .backgroundpay{
-    position:absolute;
+  .backgroundpay {
+    position: absolute;
     display: flex;
     justify-content: space-between;
-.pie {
-    width: 300px;
-    height: 300px;
-    margin: 30px;
-  }
-  .piedata {
-    width: 300px;
-    height: 350px;
-    padding: 30px;
-    margin-right: 30px;
-  }
+    .pie {
+      width: 600px;
+      height: 600px;
+      position: relative;
+    }
+    .piedata {
+      height: 40px;
+      line-height: 40px;
+      position: relative;
+      top: 40px;
+      left: -60px;
+      display: flex;
+      justify-content: space-between;
+      .equip {
+        width: 155px;
+        position: relative;
+        display: flex;
+        justify-content: start;
+        .equipborder {
+          position: relative;
+          top: 15px;
+          margin-right: 25px;
+          .equipcircle {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+          }
+        }
+        .equiptitle {
+          font-size: 20px;
+        }
+      }
+      .equipnum {
+        width: 130px;
+        font-size: 20px;
+        color: #ffffff;
+      }
+      .equipdata {
+        width: 130px;
+        font-size: 20px;
+        color: #ffffff;
+      }
+    }
   }
 }
 </style>

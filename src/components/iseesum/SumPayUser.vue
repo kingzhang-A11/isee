@@ -48,20 +48,21 @@ export default {
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
   .sumpayuser{
-    // padding: 45px 116px 100px 104px;
+      width: 920px;
+      height: 461.5px;
+      overflow: hidden;
     .userdata{
       width: 220px;
       height: 40px;
       line-height: 40px;
       font-size: 20px;
-      font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #3BD8FF;
       background: url('../../assets/payimg/paycol.png') no-repeat;
       background-size: 100% 100%;
       text-align: center;
       position: relative;
-      top:-17px;
+      top:-37px;
       left: 335px;
     }
     .payusersum{
@@ -69,21 +70,19 @@ export default {
       display: flex;
       justify-content: space-between;
       position: relative;
+      top: -25px;
       color: white;
       text-align: center;
       .usersumtitile{
         font-size: 18px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
         color: #EFEFEF;
-        line-height: 25px;
       }
       .usersumimg{
         width: 164px;
-        height: 172px;
-        overflow: hidden;
+        height: 164px;
+        margin-top:40px;
         img {
-          width: 164px;
+          height: 164px;
         }
       }
       .usersumper{
@@ -97,6 +96,8 @@ export default {
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #EFEFEF;
+        position: relative;
+        bottom: 25px;
       }
     }
   }

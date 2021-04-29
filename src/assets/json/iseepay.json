@@ -1,0 +1,77 @@
+{
+  "orderter":
+    [
+      {
+        "id": "1",
+        "stylecolor": { "backgroundColor": "#00AEFF" },
+        "stycolor": { "color": "#00AEFF" },
+        "title": "IOS",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "2",
+        "stylecolor": { "backgroundColor": "#3825C8" },
+        "stycolor": { "color": "#3825C8" },
+        "title": "APH",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "3",
+        "stylecolor": { "backgroundColor": "#3DCFEE" },
+        "stycolor": { "color": "#3DCFEE" },
+        "title": "PAD",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "4",
+        "stylecolor": { "backgroundColor": "#C0528D" },
+        "stycolor": { "color": "#C0528D" },
+        "title": "ipad",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "5",
+        "stylecolor": { "backgroundColor": "#DAB93D" },
+        "stycolor": { "color": "#DAB93D" },
+        "title": "Win",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "6",
+        "stylecolor": { "backgroundColor": "#C65946" },
+        "stycolor": { "color": "#C65946" },
+        "title": "Mac",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "7",
+        "stylecolor": { "backgroundColor": "#136368" },
+        "stycolor": { "color": "#136368" },
+        "title": "iPad",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "8",
+        "stylecolor": { "backgroundColor": "#7D60B3" },
+        "stycolor": { "color": "#7D60B3" },
+        "title": "PC",
+        "num": "858",
+        "percent": "45%"
+      },
+      {
+        "id": "9",
+        "stylecolor": { "backgroundColor": "#DA8648" },
+        "stycolor": { "color": "#DA8648" },
+        "title": "小程序",
+        "num": "858",
+        "percent": "45%"
+      }
+    ]
+}
